@@ -21,8 +21,8 @@ read efi
 echo "enter root partition name just like before like sda1 or sda2 or lvme"
 read root
 echo "enter filesystem type for root partition eg. ext4, btrfs 'if not sure what to use just use ext4' WARNING:All data of this partition will be destroyed"
-read fs-root
-mkfs.$fs-root /dev/$root
+read fsroot
+mkfs.$fsroot /dev/$root
 mount /dev/$root /mnt
 mkdir -p /mnt/boot/efi
 mount /dev/$efi /mnt/boot/efi
@@ -32,8 +32,8 @@ read home
 if [[ $home == sd* ]] | [[ $home == lvme* ]]
 then
     echo "enter filesystem type for home partition eg. ext4, btrfs 'if not sure what to use just use ext4' WARNING:All data of this partition will be destroyed"
-    read fs-home
-    mkfs.$fs-home /dev/$home
+    read fshome
+    mkfs.$fshome /dev/$home
     mkdir -p /mnt/home
     mount /dev/$home /mnt/home
  fi
