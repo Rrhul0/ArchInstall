@@ -38,5 +38,6 @@ then
     mount /dev/$home /mnt/home
  fi
 pacstrap /mnt base linux-firmware linux nano
+genfstab -U /mnt >> /mnt/etc/fstab
 echo "If you not see any error Then your ArchLinux Root must be successfully created"
 
