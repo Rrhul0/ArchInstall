@@ -1,4 +1,3 @@
-echo "Just sit and see is any error"
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 hwclock --systohc
 sed -i 's/#en_US.UTF-8/en_US.UTF-8/g' /etc/locale.gen
