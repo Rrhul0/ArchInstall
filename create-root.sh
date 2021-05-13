@@ -41,14 +41,14 @@ if [[ -n $home ]]
 then
     echo "Want to format your root partition? 'Yes OR No' Recommandation:NO"
     read fhome
-    if [[ $fhome = yes ]] | [[ $fhome = Yes ]] | [[ $fhome = Y ]] | [[ $fhome = y ]]    
+    if [[ $fhome = yes ]] || [[ $fhome = Yes ]] || [[ $fhome = Y ]] || [[ $fhome = y ]]
     then
         echo "enter filesystem type for home partition eg. ext4, btrfs 'if not sure what to use just use ext4' WARNING:All data of this partition will be destroyed"
         read fshome
         echo "> your home partition (/dev/$home) will be formated with $fshome and will be mounted at /home" >> finalview
         echo "mkfs.$fshome /dev/$home" >> finalscript
     else
-        echo "> your home partition (/dev/$home) will be mounted at /home"
+        echo "> your home partition (/dev/$home) will be mounted at /home" >> finalview
     fi
     echo "mkdir -p /mnt/home
     mount /dev/$home /mnt/home" >> finalscript
