@@ -3,6 +3,8 @@
 echo "this script will not change disk partition size, add or delete so we suggest to do partition manually before running this script"
 sleep 5
 
+sed '8 a Server = https://arch.mirror.constant.com/$repo/os/$arch' /etc/pacman.d/mirrorlist
+
 echo "testing your internet connection"
 ping -c 1 google.com >/dev/null
 if [[ $? -eq 0 ]]
