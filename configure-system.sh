@@ -11,7 +11,7 @@ echo "127.0.0.1	localhost
 echo "set root password (when type you cant see it in terminal)"
 passwd
 echo "Brand of our cpu 1)Intel 2)amd"
-press 1 or 2 accordingly
+echo "press 1 or 2 accordingly"
 read cpu
 if [[ $cpu -eq 1 ]]
 then
