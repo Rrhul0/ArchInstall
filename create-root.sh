@@ -51,15 +51,16 @@ then
         echo "> your home partition (/dev/$home) will be mounted at /home" >> finalview
     fi
     echo "mkdir -p /mnt/home
-    mount /dev/$home /mnt/home" >> finalscript
- fi
+mount /dev/$home /mnt/home" >> finalscript
+fi
 echo "> installing base(base for archlinux), linux-firmware(firmware for linux), linux(kernel), nano(for text editor)" >> finalview
 echo "pacstrap /mnt base linux-firmware linux nano" >> finalscript
 echo "> at final fstab file will be placed at /etc/fstab for automatic mount root and home at system startup" >> finalview
 echo "genfstab -U /mnt >> /mnt/etc/fstab" >> finalscript
 echo "press any key to start the processes" >> finalview
-echo 'echo "If you not see any error your archlinux root must be created successfully"' >> finalscript 
+echo 'echo "If you not see any error your archlinux root must be created successfully"' >> finalscript
+clear
 cat finalview
 read stop
-bash script
+bash finalscript
 
