@@ -15,12 +15,12 @@ echo "press 1 or 2 accordingly"
 read cpu
 if [[ $cpu -eq 1 ]]
 then
-    pacman -Syu grub intel-ucode
+    pacman -Syu grub intel-ucode --noconfirm
 elif [[ $cpu -eq 2 ]]
 then
-    pacman -Syu grub amd-ucode
+    pacman -Syu grub amd-ucode --noconfirm
 else
-    pacman -Syu grub intel-ucode amd-ucode
+    pacman -Syu grub intel-ucode amd-ucode --noconfirm
 fi
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --boot-directory=/boot
 grub-mkconfig -o /boot/grub/grub.cfg
