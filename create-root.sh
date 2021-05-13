@@ -4,7 +4,7 @@ echo "this script will not change disk partition size, add or delete so we sugge
 sleep 5
 
 echo "testing your internet connection"
-ping -c 1 google.com
+ping -c 1 google.com >/dev/null
 if [[ $? -eq 0 ]]
 then
     echo 'connected to internet'
