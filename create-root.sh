@@ -57,7 +57,8 @@ echo "> installing base(base for archlinux), linux-firmware(firmware for linux),
 echo "pacstrap /mnt base linux-firmware linux nano" >> finalscript
 echo "> at final fstab file will be placed at /etc/fstab for automatic mount root and home at system startup" >> finalview
 echo "genfstab -U /mnt >> /mnt/etc/fstab" >> finalscript
-echo "If you not see any error Then your ArchLinux Root must be successfully created"
+echo "press any key to start the processes" >> finalview
+echo 'echo "If you not see any error your archlinux root must be created successfully"' >> finalscript 
 cat finalview
 read stop
 bash script
