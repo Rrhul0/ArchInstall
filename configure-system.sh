@@ -27,16 +27,16 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "Which DE you want to install (gnome, kde, xfce)"
 read de
-if [[ de == gnome ]]
+if [[ $de == gnome ]]
 then 
     pacman -Syu gnome sudo bluez --noconfirm
     systemctl enable gdm --force
-elif [[ de == kde ]]
+elif [[ $de == kde ]]
 then
     pacman -Syu xorg plasma plasma-wayland-session kde-applications sudo bluez --noconfirm
     systemctl enable sddm --force
 else
-    pacman -Syu $de sudo blues --nocomfirm
+    pacman -Syu $de sudo blues --noconfirm
     echo "dont forgot to enable respective display manager"
 fi
 systemctl enable NetworkManager --force
